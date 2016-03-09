@@ -1,0 +1,11 @@
+README for /timeSeries
+
+This directory contains .RData time series data that was created using 
+R/createEPASpeciesArray.R and R/mergedEAnnualTimeSeries.R. These scripts 
+organize the EPA data downloaded from the web and stored in /EPAData.
+
+/individualYears = contains single species for time series
+/mergedYears = contains files that include all of the data in /individualYears
+/mergedYearsMetadata = this is the metadata companion directory for merged years
+                       time series. 
+

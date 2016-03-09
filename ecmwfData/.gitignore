@@ -1,0 +1,7 @@
+.DS_Store
+2m-T-00UTC_ecmwf_may-oct.nc
+2m-T_Td_cloudsFrac_00Z_06Z_12Z_18Z.nc
+cloudFrac_00Z_ecmwf_may-oct.nc
+dailyTemperature
+ecmwfData/t2m.RData
+ecmwdData/tcc.RData

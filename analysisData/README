@@ -1,0 +1,73 @@
+README for /analysisData:
+
+This is where analysis data packets created by readGISSmokeData.R are saved. The
+RData files in this directory are what is used by R/analysisPipeline to perform
+the bulk of the analysis in this study. 
+
+--------------------------------------------------------------------------------
+The name of the RData file tells you how it was created and what is included. 
+The name of the RData analysis data packets are as follows:
+
+PMDataUsed_Sample.DurationOfThatPMData_StatisticUsed_PMThresholdUsed.RData
+
+Options:
+
+PMDataUsed = PM2.5_non_FRM_Mass | PM2.5_FRM_Mass
+Sample.DurationOfThatPMData == 1 | 24, this is the averaging period of statistic
+StatisticUsed = Arithmatic.Mean | X1st.Max.Value , mean or max of sample? 
+PMThresholdUsed = allSummers | individualSummer , a smoke-impacted day is class-
+                  fied as a day where the value is +1sd above normal. Here you 
+                  choose whether that statistic is generated each summer or by
+                  the entire period between startYear and endYear. 
+                  
+All of these specifications are arguments earlier in the data pipeline. Please
+see the header comments of R/downloadEPAData.R, R/createEPASpeciesArray.R, and 
+R/mergeEPASpeciesArray.R to see how these arguments are implented. 
+
+--------------------------------------------------------------------------------    Whats inside the data packet? 
+
+Upon loading the selected data packet an object of class list() named
+workSpaceData will be loaded into the workspace. The list contains the following
+
+"Ozone_df" = class(Ozone_df) == "matrix". Columns are monitors, rows are days.
+             The colnames are the monitor IDs. 
+"PM_df" = The same as Ozone_df only for co-located PM. The first 9 digits 
+          corrospond to monitoring location, so these will match the colnames of
+          Ozone_df. 
+"PM_mdf" = Metadata of PM_df monitors. Rows are monitors, cols are data.          
+"Hybrid_mdf" = Metadata of ozone monitors. The site information is the same as 
+               PM_df. The only different information is specific to the 
+               instrument. 
+"HMSMask"  = Matrix with dimensions matching PM_df and Ozone_df. Uses PM 
+             instrument ID for column name. 
+"HighPMMask" = Matrix with dimensions matching PM_df, Ozone_df, HMSMask. 
+               FALSE where PM not not +1sd high. TRUE where yes. 
+"smokeImpactMask" = Matrix with dimensions matching PM_df, Ozone_df, HMSMask.
+                    TRUE are smoke impacted dates, FALSE are dates probably not
+                    impacted by smoke. 
+"lat" = The latitude of the monitoring locations, in order of columns.          
+"lon" = The longitude ""            
+"city" = The name of the city pulled from Hybrid_mdf. In order of columns.
+"cityName" = ""        
+"time" = Time is an R object of class POSIXct. It matches the rownames for all 
+         matricies. You can also get time with 
+         as.POSIXct(rownames(Ozone_df), tz=MST)
+         
+NOTE: The dates are all local. I use timezone (tz) is MST for matching purposes
+NOTE: and to make it clear that these are dates associated with time of 
+NOTE: locations in north america. This is important in scripts where ecmwf 00Z 
+NOTE: data is assigned to evenning temepratures in north america monitoring 
+NOTE: locations. The date of 00Z and evenning temperatures in north america are
+NOTE: not the same. 
+
+
+
+
+   
+
+
+
+
+
+
+   

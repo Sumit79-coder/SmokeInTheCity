@@ -1,0 +1,5 @@
+READNE fir /Python
+
+Python was not used much for this analysis (it will be used much more in future
+work). The notebooks and scripts here were used as a sanity check for the 
+custom magnitude change plot in R/ozoneDistributionAnalysis.R. 

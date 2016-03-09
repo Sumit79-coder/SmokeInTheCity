@@ -1,0 +1,10 @@
+README for /NEI 
+
+This is the directory where all NEI data lives. 
+The Top10PercentNOX.RData loads an object of class "SpatialPolygons". These
+GIS boxes represent the top 10% emitting grid boxes for the .nc data. The 
+SpatialPolyons are created using R/createNOxRegions.R. This data is used to 
+determine if a given monitoring location is urban or rural. 
+
+The .nc data was downloaded from our local cluster where we run GEOS-Chem. The .nc data is too large to store in this free git repository. Please email me if you want the NEI data. 
+
