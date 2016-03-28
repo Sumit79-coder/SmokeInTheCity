@@ -3,6 +3,9 @@
 
 ################################################################################  
 #--------------------------------DEPRICATED-------------------------------------
+# THIS FILE HAS BEEN REPLACED BY AssignECMWFTDataToMonitor.R. If you are looking
+# for a working copy of some of the functionaliy written in this script please
+# see AssignECMWFTDataToMonitor.R.
 ################################################################################  
 
 
