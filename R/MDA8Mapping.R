@@ -72,7 +72,6 @@ plotPercentExceedence   <- function(limit, workSpaceData, pdf=TRUE){
   nExceed       <- data[['nExceed']]
   time          <- data[['time']]
   
-  
   # Where nan divided by zero, no exceedence, nExceed = 0
   nanMask <- (is.nan(percentSmoked) )
   percentSmoked[nanMask] <- -1e6 # so they don't get colored
@@ -113,10 +112,14 @@ plotPercentExceedence   <- function(limit, workSpaceData, pdf=TRUE){
   
   nPoints <- length(percentSmoked)
   
+  # NOTE: red4 and brown are really similar, will change to make ppt a bit more
+  # NOTE: clear. brown has been replaced by lightsalmon3
+  
   # Colors for % smoked bins 
-  middleCols <- c("deepskyblue","forestgreen","darkorange","brown","red")
+  middleCols <- c("deepskyblue","forestgreen","darkorange","lightsalmon3","red")
   
   # 0% and 100% get their own color, done at the end
+
   colorLegendCols <- c("mediumorchid1", middleCols, "red4")
   
   # This creates 5 bins 

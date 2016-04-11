@@ -134,7 +134,7 @@ downLoadHMSSmoke <- function(startYear, endYear, startMonth, endMonth,
 #   # 2005 - 5/31/2010: hms_smoke20050805.dbf.gz  also shx shp
 #   # 6/1/2010 - 2014: hms_smoke20050805.zip.gz data/oper/hmsfinalprocessing/intermediate
 #   
-#   dataDir   <- "C:\\Users\\CrooksJ\\Desktop\\Boettcher Award\\Brey_Data\\FireData\\HMS_Smoke\\"
+#   dataDir   <- 
 #   
 #   if(startYear>endYear) stop("year error")
 #   if(startYear<2005) startYear <- 2005
