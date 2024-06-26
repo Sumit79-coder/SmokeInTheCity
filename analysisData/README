@@ -16,7 +16,7 @@ PMDataUsed = PM2.5_non_FRM_Mass | PM2.5_FRM_Mass
 Sample.DurationOfThatPMData == 1 | 24, this is the averaging period of statistic
 StatisticUsed = Arithmatic.Mean | X1st.Max.Value , mean or max of sample? 
 PMThresholdUsed = allSummers | individualSummer , a smoke-impacted day is class-
-                  fied as a day where the value is +1sd above normal. Here you 
+                  ified as a day where the value is +1sd above normal. Here you 
                   choose whether that statistic is generated each summer or by
                   the entire period between startYear and endYear. 
                   
