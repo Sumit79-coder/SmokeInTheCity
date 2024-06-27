@@ -5,7 +5,7 @@
 # This function is used to compare the data of individual years and merged years
 # for a given monitor and set of dates
 # This is the look at all the data for a given species test. If you dont get a 
-# message back grom the function, all the data appears to be matching. 
+# message back from the function, all the data appears to be matching. 
 
 # Sample arguments
 species <- "PM2.5_non_FRM_Mass"
