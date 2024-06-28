@@ -22,7 +22,7 @@ PMThresholdUsed = allSummers | individualSummer , a smoke-impacted day is class-
                   
 All of these specifications are arguments earlier in the data pipeline. Please
 see the header comments of R/downloadEPAData.R, R/createEPASpeciesArray.R, and 
-R/mergeEPASpeciesArray.R to see how these arguments are implented. 
+R/mergeEPASpeciesArray.R to see how these arguments are implemented. 
 
 --------------------------------------------------------------------------------    Whats inside the data packet? 
 
@@ -32,7 +32,7 @@ workSpaceData will be loaded into the workspace. The list contains the following
 "Ozone_df" = class(Ozone_df) == "matrix". Columns are monitors, rows are days.
              The colnames are the monitor IDs. 
 "PM_df" = The same as Ozone_df only for co-located PM. The first 9 digits 
-          corrospond to monitoring location, so these will match the colnames of
+          correspond to monitoring location, so these will match the colnames of
           Ozone_df. 
 "PM_mdf" = Metadata of PM_df monitors. Rows are monitors, cols are data.          
 "Hybrid_mdf" = Metadata of ozone monitors. The site information is the same as 
@@ -50,14 +50,14 @@ workSpaceData will be loaded into the workspace. The list contains the following
 "city" = The name of the city pulled from Hybrid_mdf. In order of columns.
 "cityName" = ""        
 "time" = Time is an R object of class POSIXct. It matches the rownames for all 
-         matricies. You can also get time with 
+         matrices. You can also get time with 
          as.POSIXct(rownames(Ozone_df), tz=MST)
          
 NOTE: The dates are all local. I use timezone (tz) is MST for matching purposes
 NOTE: and to make it clear that these are dates associated with time of 
 NOTE: locations in north america. This is important in scripts where ecmwf 00Z 
-NOTE: data is assigned to evenning temepratures in north america monitoring 
-NOTE: locations. The date of 00Z and evenning temperatures in north america are
+NOTE: data is assigned to evening temperatures in north america monitoring 
+NOTE: locations. The date of 00Z and evening temperatures in north america are
 NOTE: not the same. 
 
 
